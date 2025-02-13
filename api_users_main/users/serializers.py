@@ -12,8 +12,8 @@ from .models import CustomUser
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ("id", "email", "refresh_token")
-        read_only_fields = ("id", "refresh_token")
+        fields = ('id', 'email', 'first_name', 'last_name', 'refresh_token')
+        read_only_fields = ('id', 'refresh_token')
 
 
 class RegisterSerializer(serializers.ModelSerializer):

@@ -56,7 +56,7 @@ class UserDetailView(APIView):
         serializer = UserSerializer(user)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    def put(self, request, *args, **kwargs):
+    def patch(self, request, *args, **kwargs):
         # Обновление информации о текущем пользователе
         user = request.user
         serializer = UserSerializer(user, data=request.data, partial=True)
