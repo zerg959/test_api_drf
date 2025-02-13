@@ -8,10 +8,13 @@ from datetime import timedelta
 from constance import config
 from .models import CustomUser
 
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ('id', 'email')
+        fields = ('id', 'email', 'refresh_token')
+        read_only_fields = ('id', 'refresh_token')
+
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -26,6 +29,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
+
 
 class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField()
@@ -50,6 +54,7 @@ class LoginSerializer(serializers.Serializer):
             }
         raise serializers.ValidationError("Wrong username/password data")
 
+
 class TokenRefreshSerializer(serializers.Serializer):
     refresh_token = serializers.CharField()
 
@@ -58,7 +63,7 @@ class TokenRefreshSerializer(serializers.Serializer):
         try:
             user = CustomUser.objects.get(refresh_token=refresh_token)
             if not user.refresh_token or (now() - user.date_joined) > timedelta(days=config.JWT_REFRESH_TOKEN_LIFETIME_DAYS):
-                # Если refresh token истек, генерируем новую пару токенов
+                # If refresh token истек generate new pair of tokens
                 access_token_payload = {
                     'user_id': user.id,
                     'expire': (now() + timedelta(days=config.JWT_ACCESS_TOKEN_LIFETIME_DAYS)).isoformat(),
@@ -73,7 +78,7 @@ class TokenRefreshSerializer(serializers.Serializer):
                     'refresh_token': str(new_refresh_token)
                 }
             else:
-                # Если refresh token действителен, обновляем access token
+                # If refresh token valid, refresh access token
                 access_token_payload = {
                     'user_id': user.id,
                     'expire': (now() + timedelta(days=config.JWT_ACCESS_TOKEN_LIFETIME_DAYS)).isoformat(),
