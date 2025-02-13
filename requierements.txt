@@ -1,0 +1,5 @@
+django
+pyjwt
+djangorestframework
+django_constance
+python_dotenv
