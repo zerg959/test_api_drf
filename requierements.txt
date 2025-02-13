@@ -3,3 +3,6 @@ pyjwt
 djangorestframework
 django_constance
 python_dotenv
+black
+flake8
+pytest
