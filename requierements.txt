@@ -1,5 +1,8 @@
 django
-djangorestframework
 pyjwt
-python-dotenv
-django-constance
+djangorestframework
+django_constance
+python_dotenv
+black
+flake8
+pytest
