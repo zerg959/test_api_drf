@@ -1,5 +1,5 @@
 # Simple API-project with PyJWT-authorization.
-Run on 147.45.162.232 with Django and Browsable API.<br>
+Run on <a href="http://147.45.162.232/api/register">147.45.162.232</a> with Django and Browsable API.<br>
 #### API-endpoints:
 - /api/register/
 - /api/login/
