@@ -1,7 +1,7 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
-# Simple API-project with PyJWT-authorization.
+# Simple DRF API-project with PyJWT-authorization.
 Run on <a href="http://147.45.162.232/api/register">147.45.162.232</a> with Django and Browsable API.<br>
 #### API-endpoints:
 - /api/register/
