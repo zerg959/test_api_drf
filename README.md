@@ -5,7 +5,7 @@ Run on 147.45.162.232 with Django and Browsable API.<br>
 - /api/login/
 - /api/refresh/
 - /api/me/
-- /api-doc/
+- /api-doc/<br>
 -----------------<br>
 Admin zone: /admin/<br>
 Superuser: admin@amin.com<br>
