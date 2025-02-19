@@ -22,4 +22,3 @@ Superuser: admin@amin.com 123Qwe123<br>
 - Clients may request an Access Token refresh at any time, for instance, upon Access Token expiry by providing a valid Refresh Token.<br>
 - In this case, the service returns a new valid pair of Access and Refresh Tokens, resetting their lifespans.<br>
 - Provide a browsable API with endpoint documentation.<br>
---------------
