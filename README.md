@@ -14,7 +14,6 @@ Superuser: admin@amin.com 123Qwe123
 REST API for a user authentication and authorization system using Django and Django REST Framework.<br>
 The system supports user registration, authentication, token refresh, logout, and allow users to retrieve and update their personal information.<br>
 Authentication utilizes Access and Refresh tokens.<br>
-
 Refresh Token – A UUID stored in the database, issued for 30 days by default.<br>
 Access Token – A JSON Web Token with a default lifespan of 30 seconds.<br>
 Used the django-constance module for managing the lifetimes of Access and Refresh tokens.<br>
