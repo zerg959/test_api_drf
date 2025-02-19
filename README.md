@@ -10,7 +10,7 @@ API-points:
 Admin zone:<br>
 /admin/<br>
 Superuser: admin@amin.com 123Qwe123<br>
--------- Description =================
+====================================== Description ====================================================
 REST API for a user authentication and authorization system using Django and Django REST Framework.<br>
 The system supports user registration, authentication, token refresh, logout, and allow users to retrieve and update their personal information.<br>
 Authentication utilizes Access and Refresh tokens.<br>
