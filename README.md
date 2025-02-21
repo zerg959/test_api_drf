@@ -28,9 +28,9 @@ Superuser: admin@amin.com<br>
 - Provide a browsable API with endpoint documentation.<br>
 ============================= Requests Examples ====================<br>
 <b>- User Registration<b><br>
-'''
+```
 Endpoint: `/api/register/`
 Method: `POST`
 Body: `{"password": "password", "email": "user@example.com"}`
 Response: `{"id": 1, "email": "user@example.com"}`
-'''
+```
