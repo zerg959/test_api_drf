@@ -29,15 +29,44 @@ Superuser: admin@amin.com<br>
 ============================= Requests Examples ====================<br>
 <b>User Registration<b><br>
 ```
-Endpoint: `/api/register/`
-Method: `POST`
-Body: `{"password": "password", "email": "user@example.com"}`
-Response: `{"id": 1, "email": "user@example.com"}`
+Endpoint: /api/register/
+Method: POST
+Body: {"password": "password", "email": "user@example.com"}
+Response: {"id": 1, "email": "user@example.com"}
 ```
-<b>Authentication<b><br>
+<b>Authentication (Obtaining Access and Refresh Token)<b><br>
 ```
 Endpoint: /api/login/
 Method: POST
 Body: {"email": "user@example.com", "password": "password"}
 Response: {"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMjMsImV4cCI6MTcxMjE0NTk0NiwiaWF0IjoxNzEyMTQ1OTE2fQ.KX6LM66tC3p3bUCdkWRQkPvariP8tzUfWd8Z13akCPY", "refresh_token": "d952527b-caef-452c-8c93-1100214f82e5"}
+```
+<b>Access Token Refresh<b><br>
+```
+Endpoint: /api/refresh/
+Method: POST
+Body: {"refresh_token": "d952527b-caef-452c-8c93-1100214f82e5"}
+Response: {"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMjMsInVzZXJuYW1lIjoiZXhhbXBsZVVzZXIiLCJleHAiOjE3MTIxNDYxNDd9.zKobBlRuOiJSxCmi-iYap1bejfnvK6M3qtnkT0ssDKA", "refresh_token": "eb0464c2-ed6e-4346-a709-042c33946154"}
+```
+<b>Logout (Invalidating Refresh Token)<b><br>
+```
+Endpoint: /api/logout/
+Method: POST
+Body: {"refresh_token": "eb0464c2-ed6e-4346-a709-042c33946154"}
+Response: {"success": "User logged out."}
+```
+<b>Retrieving Personal Information<b><br>
+```
+Endpoint: /api/me/
+Method: GET
+Header: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMjMsInVzZXJuYW1lIjoiZXhhbXBsZVVzZXIiLCJleHAiOjE3MTIxNDYxNDd9.zKobBlRuOiJSxCmi-iYap1bejfnvK6M3qtnkT0ssDKA
+Response: {"id": 1, "username": "", "email": "user@example.com"}
+```
+<b>Updating Personal Information<b><br>
+```
+Endpoint: /api/me/
+Method: PUT
+Header: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMjMsInVzZXJuYW1lIjoiZXhhbXBsZVVzZXIiLCJleHAiOjE3MTIxNDYxNDd9.zKobBlRuOiJSxCmi-iYap1bejfnvK6M3qtnkT0ssDKA
+Body: {"username": "John Smith"}
+Response: {"id": 1, "username": "John Smith", "email": "user@example.com"}
 ```
