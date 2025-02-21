@@ -27,10 +27,17 @@ Superuser: admin@amin.com<br>
 - In this case, the service returns a new valid pair of Access and Refresh Tokens, resetting their lifespans.<br>
 - Provide a browsable API with endpoint documentation.<br>
 ============================= Requests Examples ====================<br>
-<b>- User Registration<b><br>
+<b>User Registration<b><br>
 ```
 Endpoint: `/api/register/`
 Method: `POST`
 Body: `{"password": "password", "email": "user@example.com"}`
 Response: `{"id": 1, "email": "user@example.com"}`
+```
+<b>Authentication<b><br>
+```
+Endpoint: /api/login/
+Method: POST
+Body: {"email": "user@example.com", "password": "password"}
+Response: {"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMjMsImV4cCI6MTcxMjE0NTk0NiwiaWF0IjoxNzEyMTQ1OTE2fQ.KX6LM66tC3p3bUCdkWRQkPvariP8tzUfWd8Z13akCPY", "refresh_token": "d952527b-caef-452c-8c93-1100214f82e5"}
 ```
